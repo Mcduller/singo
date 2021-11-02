@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"fmt"
+
 	"singo/conf"
 	"singo/model"
 	"singo/serializer"
@@ -13,6 +14,7 @@ import (
 
 // Ping 状态检查页面
 func Ping(c *gin.Context) {
+	fmt.Println("getPing")
 	c.JSON(200, serializer.Response{
 		Code: 0,
 		Msg:  "Pong",
