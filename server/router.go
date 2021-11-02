@@ -2,6 +2,7 @@ package server
 
 import (
 	"os"
+
 	"singo/api"
 	"singo/middleware"
 
@@ -36,6 +37,13 @@ func NewRouter() *gin.Engine {
 			auth.GET("user/me", api.UserMe)
 			auth.DELETE("user/logout", api.UserLogout)
 		}
+
+		v1.POST("video", api.CreateVideo)
+		// v1.GET("video/:id",api.ShowVideo)
+		// v1.GET("videos",api.ListVideo)
+		// v1.PUT("video/:id",api.UpdateVideo)
+		// v1.DELETE("video",api.DeleteVideo)
+
 	}
 	return r
 }
